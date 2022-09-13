@@ -1,36 +1,28 @@
 <div class="main">
-  <h1>My To Do List</h1>
-  <label for="addItemInput">What would you like to do today?</label>
+  <h1>Minha Lista de Tarefas</h1>
+  <label for="addItemInput">Que tarefa tenho de fazer?</label>
 
-  <input #newItem placeholder="add an item" (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+  <input #newItem placeholder="adicione uma tarefa" (keyup.enter)="addItem(newItem.value); newItem.value = ''"
     class="lg-text-input" id="addItemInput" />
 
-  <!-- <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
- -->
+  <button class="btn-primary" (click)="addItem(newItem.value)">Adicionar</button>
 
-  <!-- Buttons that show all, still to do, or done items on click -->
   <div class="btn-wrapper">
     <button class="btn btn-menu" [class.active]="filter == 'all'" (click)="filter = 'all'">
-      All
+      Todas
     </button>
 
     <button class="btn btn-menu" [class.active]="filter == 'active'" (click)="filter = 'active'">
-      To Do
+      A Fazer
     </button>
 
     <button class="btn btn-menu" [class.active]="filter == 'done'" (click)="filter = 'done'">
-      Done
+      Feitas
     </button>
   </div>
 
-  <!-- <h2>{{items.length}} item(s)</h2>
-        <ul>... -->
-
-
-  <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
-
   <h2>{{items.length}} <span *ngIf="items.length === 1; else elseBlock">item</span>
-    <ng-template #elseBlock>items</ng-template>
+    <ng-template #elseBlock>itens</ng-template>
   </h2>
 
   <ul>
