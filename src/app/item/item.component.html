@@ -8,7 +8,7 @@
     <button class="btn btn-warn" (click)="remove.emit()">Apagar</button>
   </div>
 
-  <!-- This section shows only if user clicks Edit button -->
+  <!-- A div abaixo é exibida somente se o usuário clicar no botão Editar -->
   <div *ngIf="editable">
     <input class="sm-text-input" placeholder="edit item" [value]="item.description" #editedItem (keyup.enter)="saveItem(editedItem.value)">
 
